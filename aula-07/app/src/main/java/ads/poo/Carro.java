@@ -1,8 +1,8 @@
 package ads.poo;
 
-public class Carro extends App {
-    //Atributos
+public class Carro {
 
+    //Atributos
     private double velocidade;
     private String modelo;
 
@@ -11,11 +11,11 @@ public class Carro extends App {
         velocidade += v;
     }
 
-    public double obterVelocidade() {
-        return velocidade;
+    public void frear(double v) {
+        velocidade -= v;
     }
 
-    public void freiar() {
-        velocidade = 0.0;
+    public double obterVelocidade() {
+        return velocidade;
     }
 }

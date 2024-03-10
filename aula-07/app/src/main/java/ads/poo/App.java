@@ -14,7 +14,13 @@ public class App {
 
         Contador cont = new Contador();
 
-        cont.obterValorCont();
+        cont.atribuirValor(10);
+
+        System.out.println(cont.obterValorCont());
+
+        cont.incrementarCont(20);
+
+        System.out.println(cont.obterValorCont());
 
     }
 }
