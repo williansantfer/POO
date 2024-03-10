@@ -4,16 +4,15 @@ public class Contador {
 
     private int valorAtual;
     
-    public void atribuirValor(int v) {
-        valorAtual = v;
+    public void atribuirValor(int vAt) {
+        valorAtual = vAt;
     }
 
-    public void incrementarCont(int v) {
-        valorAtual+= v;
+    public void incrementarCont(int vIn) {
+        valorAtual += vIn;
     }
 
-    public void obterValorCont() {
-        System.out.println(valorAtual);
+    public int obterValorCont() {
+        return valorAtual;
     }
-  
 }
