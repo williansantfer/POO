@@ -48,7 +48,7 @@ public class Carro {
 
     @Override
     public String toString() {
-        return "Carro {" + "velocidade = " + velocidade + "}"
+        return "Carro {" + "velocidade = " + velocidade + "}";
     }
 
     //Métodos
