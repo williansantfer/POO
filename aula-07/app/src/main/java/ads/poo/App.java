@@ -2,7 +2,20 @@ package ads.poo;
 
 public class App {
     public static void main(String[] args) {
-        
+
+        Carro c = new Carro();
+
+        c.acelerar(200);
+
+        c.frear(20);
+
+        System.out.println(c.toString());
+
+
+
+
+
+
         /*Carro c = new Carro();
         Carro d = new Carro();
 
@@ -12,7 +25,7 @@ public class App {
 
         System.out.println("Velocidade: " + d.obterVelocidade());*/
 
-        Contador cont = new Contador();
+        /*Contador cont = new Contador();
 
         cont.atribuirValor(10);
 
@@ -20,7 +33,7 @@ public class App {
 
         cont.incrementarCont(20);
 
-        System.out.println(cont.obterValorCont());
+        System.out.println(cont.obterValorCont());*/
 
     }
 }
