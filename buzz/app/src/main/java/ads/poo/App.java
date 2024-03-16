@@ -19,13 +19,14 @@ public class App {
 
         c.setCor("Verde");*/
 
-        Pessoa p = new Pessoa();
+        Pessoa p = new Pessoa("Juca", "Juca@example.com", "978.367.987-78");
 
-        p.setNome("Juca");
-        p.setEmail("juca@gmail.com");
-        p.setCpf("978.367.987-78");
 
         System.out.println(p.toString());
+
+        Caneta bic = new Caneta(100,"azul");
+
+        Caneta faber = new Caneta("preta");
 
     }
 }

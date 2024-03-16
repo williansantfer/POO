@@ -5,6 +5,21 @@ public class Caneta {
     private String cor = "preta";
     private int qtdTinta = 100;
 
+    public Caneta(int qtdTinta, String cor) {
+        this.qtdTinta = qtdTinta;
+        this.cor = cor;
+    }
+
+    public Caneta(String cor) {
+        this(100, cor);
+    }
+
+    public Caneta() {
+//        this.qtdTinta = 100;
+//        this.cor = "vermelha";
+        this(100, "vermelha");
+    }
+
     public String getCor() {
         return cor;
     }

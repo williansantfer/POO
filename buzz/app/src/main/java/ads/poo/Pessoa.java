@@ -6,9 +6,19 @@ public class Pessoa {
     private String cpf;
     private String email;
 
+    public Pessoa(String nome, String email, String cpf) {
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+    }
+
     @Override
     public String toString() {
-        return "Pessoa [nome=" + nome + ", cpf=" + cpf + ", email=" + email + "]";
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 
     public String getNome() {
