@@ -12,10 +12,6 @@ public class App {
         System.out.println(c.toString());
 
 
-
-
-
-
         /*Carro c = new Carro();
         Carro d = new Carro();
 

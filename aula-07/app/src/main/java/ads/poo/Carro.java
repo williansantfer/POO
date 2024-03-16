@@ -4,41 +4,51 @@ public class Carro {
 
     //Atributos
     private int velocidade;
-    private int velocidadeAtual;
     //private String modelo;
 
-    public void setVelocidade(int velocidade) {
-        if (velocidade >= 0 || velocidade <= 200) {
-            velocidade = 0;
-        } else {
-            this.velocidade = velocidade;
-        }
+    public Carro(int velocidade) {
+        this.velocidade = velocidade;
     }
 
     public Carro() {
         this.velocidade = 0;
     }
 
-    public void acelerar(int inc) {
-        if (inc < 0) {
-        }
-
-        this.velocidade += inc;
-    }
-
-    public void frear(int frear) {
-        this.velocidade -= frear;
-    }
-
     public int getVelocidade() {
         return velocidade;
     }
 
+    public int setVelocidade(int velocidade) {
+        if (velocidade >= 0 && velocidade <= 200) {
+            return velocidade;
+        } else {
+            return this.velocidade = 0;
+        }
+    }
+
+    public int acelerar(int aceleracao) {
+        if (aceleracao < 0) {
+            return velocidade += 0;
+        } else if (velocidade + aceleracao > 200) {
+            return velocidade = 200;
+        } else {
+            return velocidade += aceleracao;
+        }
+    }
+
+    public int frear(int frenagem) {
+        if (frenagem < 0) {
+            return velocidade;
+        } else if (frenagem > 200) {
+            return velocidade = 0;
+        } else {
+            return velocidade -= frenagem;
+        }
+    }
+
     @Override
     public String toString() {
-        return "Carro{" +
-                "velocidade=" + velocidade +
-                '}';
+        return "Carro {" + "velocidade = " + velocidade + "}"
     }
 
     //Métodos
