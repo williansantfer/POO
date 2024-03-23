@@ -2,12 +2,14 @@ package ads.poo;
 
 public class Caneta {
 
-    private String cor = "preta";
+    private final String COR;
     private int qtdTinta = 100;
+
+    private final String MARCA_DA_CANETA = "bic"; //constante
 
     public Caneta(int qtdTinta, String cor) {
         this.qtdTinta = qtdTinta;
-        this.cor = cor;
+        this.COR = cor;
     }
 
     public Caneta(String cor) {
@@ -21,11 +23,7 @@ public class Caneta {
     }
 
     public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
+        return COR;
     }
 
     public int getQtdTinta() {
@@ -34,12 +32,16 @@ public class Caneta {
 
 
     public void setQtdTinta(int qtdTinta) {
+        // qtd de tinta >=0 && qtd de tinta <= 100
         this.qtdTinta = qtdTinta;
     }
 
     public String desenhar() {
         // TODO caneta não desenha sem tinta
+        if (qtdTinta == 0) {
+            return "Não tem tinta";
+        }
         qtdTinta--;
-        return "Desenhando na cor " + cor;
+        return "Desenhando na cor " + COR;
     } 
 }
