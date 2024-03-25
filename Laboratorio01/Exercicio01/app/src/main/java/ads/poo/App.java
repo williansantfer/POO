@@ -11,5 +11,8 @@ public class App {
         p.distancia(p2);
 
         System.out.println(p.toString());
+
+        System.out.println(p2.toString());
+
     }
 }

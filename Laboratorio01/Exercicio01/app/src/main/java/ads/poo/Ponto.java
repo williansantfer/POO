@@ -18,24 +18,22 @@ public class Ponto {
 
     @Override
     public String toString() {
-        return "Ponto [x=" + x + ", y=" + y + "]";
+        return "Ponto [" + x + ", " + y + "]";
     }
 
     public double getX() {
         return x;
     }
 
-    public void setX(double x) {
-        this.x = x;
+    public double setX(double x) {
+        return this.x = x;
     }
 
     public double getY() {
         return y;
     }
 
-    public void setY(double y) {
-        this.y = y;
+    public double setY(double y) {
+        return this.y = y;
     }
-
-    
 }
