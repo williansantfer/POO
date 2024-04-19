@@ -3,9 +3,11 @@
  */
 package ads.poo;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.time.LocalDate;
 
 public class App {
 
@@ -21,59 +23,149 @@ public class App {
 
     private int menu() {
         int opcao = 0;
-        System.out.println("..::SIGAA 2 ::..");
+        System.out.println("..:: SIGAA ::..");
         System.out.println("1 - Cadastrar");
         System.out.println("2 - Editar");
         System.out.println("3 - Excluir");
         System.out.println("4 - Listar dados de um aluno");
         System.out.println("5 - Listar todos os alunos");
         System.out.println("6 - Sair");
-
-        // TODO ler a opcao
-
+        opcao = teclado.nextInt();
+        teclado.nextLine();
         return opcao;
     }
 
     private boolean cadastrar() {
 
-        String matricula = "123";
-        Aluno a = new Aluno("Bob", matricula, "ADS", "1234", "bob@example.com", LocalDate.of(2000,10,2));
+        System.out.println("Digite o nome: ");
+        String nome = teclado.nextLine();
+
+        System.out.println("Digite a matrícula: ");
+        String matricula = teclado.nextLine();
+
+        System.out.println("Digite o nome do curso: ");
+        String curso = teclado.nextLine();
+
+        System.out.println("Digite o número de telefone: ");
+        String telefone = teclado.nextLine();
+
+        System.out.println("Digite o endereço de email: ");
+        String email = teclado.nextLine();
+
+        System.out.println("Digite a data de nascimento: ");
+        String dataString = teclado.nextLine();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate data = LocalDate.parse(dataString, formato);
+
+        Aluno a = new Aluno(nome, matricula, curso, telefone, email, data);
 
         if (!this.bancoDeDados.containsKey(matricula)) {
             this.bancoDeDados.put(matricula, a);
             return true;
         }
         return false;
-
     }
 
     private boolean editar() {
-        return false;
+
+        System.out.println("Digite a matrícula: ");
+        String matricula = teclado.nextLine();
+
+        if (this.bancoDeDados.containsKey(matricula)) {
+            
+            System.out.println("Escolha uma opção para editar: ");
+            System.out.println("1 - Nome");
+            System.out.println("2 - Matrícula");
+            System.out.println("3 - Curso");
+            System.out.println("4 - Telefone");
+            System.out.println("5 - Email");
+            System.out.println("6 - Data de Nascimento");
+            System.out.println("7 - Sair");
+
+            int opcao = teclado.nextInt();
+            teclado.nextLine();
+
+            switch (opcao) {
+                case 1 -> {
+                    System.out.println("Digite o novo nome: ");
+                    String novoNome = teclado.nextLine();
+                }
+                
+                case 2 -> {
+                    System.out.println("Digite o novo número de matrícula: ");
+                    String novaMatricula = teclado.nextLine();
+
+                    if (this.bancoDeDados.containsKey(novaMatricula)) {
+
+                    } else {
+                        System.out.println("Número de matrícula digitado não está disponível");
+                    }
+                }
+                
+                case 3 -> {
+                    System.out.println("Atualize o nome do curso: ");
+                    String cursoAtualizado = teclado.nextLine();
+                }
+
+                case 4 -> {
+                    System.out.println("Digite o novo número de telefone: ");
+                    String novoTelefone = teclado.nextLine();
+                }
+
+                case 5 -> {
+                    System.out.println("Digite o novo endereço de email: ");
+                    String novoEmail = teclado.nextLine();
+                }
+
+                case 6 -> {
+                    System.out.println("Digite a nova data de nascimento: ");
+                    String novaDataNascimento = teclado.nextLine();
+                }
+
+                case 7 -> {
+                    return false;
+                }
+
+                default -> {
+                    System.out.println("Opção inválida");
+                }
+                
+
+                this.bancoDeDados.put(matricula, a);
+                return true;
+            }
+
+        } else {
+            System.out.println("Matrícula não encontrada");
+            return false;
+        }
     }
 
     private void excluir() {
 
-        String matricula = "123";
+        System.out.println("Digite a matrícula do aluno: ");
+        String matricula = teclado.nextLine();
 
         if (this.bancoDeDados.remove(matricula) == null) {
-            System.out.println("Não encontrada");
+            System.out.println("Matrícula não encontrada");
         } else {
-            System.out.println("Removida com sucesso");
+            this.bancoDeDados.remove(matricula);
+            System.out.println("Matrícula excluída com sucesso");
         }
 
     }
 
-    private boolean listarDadosUmAluno() {
+    private void listarDadosUmAluno() {
 
         System.out.println("Digite a matrícula: ");
-        String mat = teclado.nextLine();
+        String matricula = teclado.nextLine();
 
-        if (mat == this.getMatricula()) {
-
+        if (this.bancoDeDados.containsKey(matricula)) {
+            System.out.println(this.bancoDeDados.get(matricula).toString());
+        } else {
+            System.out.println("Matrícula não encontrada");
         }
 
-
-        return false;
     }
 
     private void listarTodosAlunos() {
@@ -83,7 +175,6 @@ public class App {
     private boolean sair() {
         return false;
     }
-
 
 
     public static void main(String[] args) {
@@ -104,10 +195,6 @@ public class App {
                 default -> System.out.println("Opção ínvalida");
             }
         } while (opcao != 6);
-
-
-
-
 
     }
 }
