@@ -129,11 +129,9 @@ public class App {
                 default -> {
                     System.out.println("Opção inválida");
                 }
-                
-
-                this.bancoDeDados.put(matricula, a);
-                return true;
             }
+
+            return true;
 
         } else {
             System.out.println("Matrícula não encontrada");
