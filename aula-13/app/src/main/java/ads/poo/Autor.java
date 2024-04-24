@@ -10,7 +10,13 @@ public class Autor {
         this.nacionalidade = nacionalidade;
     }
 
-
+    @Override
+    public String toString() {
+        return "Autor{" +
+                "nome='" + nome + '\'' +
+                ", nacionalidade='" + nacionalidade + '\'' +
+                '}';
+    }
 
     //dois livros
     //incluir na livraria

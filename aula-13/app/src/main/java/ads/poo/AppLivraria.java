@@ -9,20 +9,27 @@ public class AppLivraria {
 
         ArrayList<Autor> bancoAutores = new ArrayList<>();
 
-        Autor a = new Autor("Stephen King", "Estados Unidos");
+        Autor king = new Autor("Stephen King", "Estados Unidos");
 
-        Autor o = new Autor("Outro", "Canadá");
+        Autor alguem = new Autor("Alguém", "Grã-Bretanha");
 
-        bancoAutores.add(a);
+        bancoAutores.add(king);
 
-        bancoAutores.add(o);
+        bancoAutores.add(alguem);
 
-        Livro l = new Livro("O Iluminado", 72.90, bancoAutores, "123" );
+        HashMap<String, Livro> bancoDeLivros = new HashMap<>();
 
-        Livro l2 = new Livro("It: A Coisa", 65.90, bancoAutores, "321");
+        Livro oIluminado = new Livro("O Iluminado", 72.90, bancoAutores, "123", bancoAutores);
+
+        bancoDeLivros.put(oIluminado.getIsbn(), oIluminado);
+
+        Livro l = bancoDeLivros.get("123");
+        if (l != null) {
+            Autor outro = new Autor("Outro", "BR");
+            l.addAutor(outro);
+        }
 
 
-        HashMap<String, Livro> bancoDeLivros;
 
 
     }
