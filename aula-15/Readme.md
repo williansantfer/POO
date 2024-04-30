@@ -11,10 +11,31 @@ class App {
 }
 
 class Agenda {
+    - contatos: ArrayList<Contato>
+    
+    + Agenda()
+    + addContato(c: contato) boolean
+    + removeContato(n: String, s: String) boolean
+    + addTelefone(r: String, n: String, c: Contato) boolean
+    + addEmail(r: String, e: String, c: Contato) boolean
     
 }
 
 class Contato {
+    - nome: String
+    - sobrenome: String
+    - dataNasc: LocalDate
+    - telefones: ArrayList<Telefone>
+    - emails: Arraylist<Email>
+    
+    + Contato(n: String, s: String, dN: LocalDate)
+    + addTelefone(r: String, n: String) boolean
+    + addEmail(r: String, e: String) boolean
+    + removeTelefone(r: String) boolean
+    + removeEmail(r: String) boolean
+    + updateTelefone(r: String, n: String) boolean
+    + updateEmail(r: String, e: String) boolean
+    + toString() String
     
 }
 
@@ -29,8 +50,8 @@ class Email {
 }
 
 class Telefone {
-    - String rotulo
-    - String valor
+    - rotulo: String
+    - valor: String
     
     + Telefone(r: String, v: String)
     + toString() String
