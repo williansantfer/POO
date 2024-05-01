@@ -18,6 +18,8 @@ class Agenda {
     + removeContato(n: String, s: String) boolean
     + addTelefone(r: String, n: String, c: Contato) boolean
     + addEmail(r: String, e: String, c: Contato) boolean
+    + updateTelefone(r: String, n: String, c: Contato) boolean
+    + updateEmail(r: String,e,c)
     
 }
 
