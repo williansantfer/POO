@@ -3,6 +3,7 @@
  */
 package ads.poo;
 
+import ads.poo.produtos.Celular;
 import ads.poo.produtos.Dimensao;
 import ads.poo.produtos.SemFio;
 import ads.poo.produtos.Telefone;
@@ -10,6 +11,40 @@ import ads.poo.produtos.Telefone;
 public class App {
     public static void main(String[] args) {
 
+        Telefone[] t = new Telefone[4];
+
+        t[0] = new Telefone(123,"1F2T","A14", 2.4, new Dimensao(4,3,1));
+
+        t[1] = new Celular(123,"1F2T","A14", 2.4, new Dimensao(4,3,1),20,2, 30, "Android");
+
+        t[2] = new Celular(123,"1F2T","A14", 2.4, new Dimensao(4,3,1),20,2, 30, "Android");
+
+        t[3] = new SemFio(123,"1F2T","A14", 2.4, new Dimensao(4,3,1), 30, 40, 60);
+
+        for (Telefone tel : t) {
+            System.out.println(tel.imprimirDados());
+
+            if (tel instanceof Celular) {
+                System.out.println(((Celular) tel).getSistemaOperacinal());
+            }
+        }
+
+
+
+
+
+
+        /*
+        c.setSistemaOperacinal("ios");
+
+        ((Celular)t).setSistemaOperacinal("windows");
+
+        */
+
+
+
+
+        /*
         Telefone tel = new Telefone(123, "1A2B", "disco", 1.5, new Dimensao(5,2,1));
 
         Telefone semF = new SemFio(456, "2N6F", "A03", 0.3, new Dimensao(4,2,1), 5, 2, 300);
@@ -19,6 +54,8 @@ public class App {
         System.out.println(tel.imprimirDados());
 
         System.out.println(semF.imprimirDados());
+
+        */
 
 
 
