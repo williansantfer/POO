@@ -1,4 +1,12 @@
 package ads.poo;
 
-public class ObjetoDeDesenho {
+public abstract class ObjetoDeDesenho {
+
+    protected String corDalInha;
+
+    public ObjetoDeDesenho(String corDalInha) {
+        this.corDalInha = corDalInha;
+    }
+
+    public abstract String desenhar();
 }

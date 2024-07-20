@@ -6,5 +6,11 @@ package ads.poo;
 public class App {
     public static void main(String[] args) {
 
+        Ponto p = new Ponto("Azul",5, 10);
+
+        System.out.println(p.desenhar());
+
+        Linha l = new Linha (new Ponto(2));
+
     }
 }
