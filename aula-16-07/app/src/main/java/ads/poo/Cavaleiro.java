@@ -1,6 +1,6 @@
 package ads.poo;
 
-public class Cavaleiro extends Personagem {
+public class Cavaleiro extends Personagem implements Guerreiro {
 
     public Cavaleiro(int vida, double ataque, double velocidade) {
         super(vida, ataque, velocidade);
@@ -8,7 +8,7 @@ public class Cavaleiro extends Personagem {
 
     @Override
     public String atacar() {
-        return "Eu sou o Cavaleiro! " + super.atacar() + " com espada!";
+        return "Eu sou o Cavaleiro! " + atacar() + " com espada!";
     }
 
     @Override

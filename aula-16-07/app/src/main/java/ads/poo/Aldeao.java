@@ -1,6 +1,6 @@
 package ads.poo;
 
-public class Aldeao extends Personagem {
+public class Aldeao extends Personagem implements Guerreiro, Coletador {
 
     public Aldeao(int vida, double ataque, double velocidade) {
         super(vida, ataque, velocidade);
@@ -8,7 +8,7 @@ public class Aldeao extends Personagem {
 
     @Override
     public String atacar() {
-        return "Eu sou o Aldeão! " +super.atacar() + " com um soco!";
+        return "Eu sou o Aldeão! " + atacar() + " com um soco!";
     }
 
     @Override
@@ -19,5 +19,15 @@ public class Aldeao extends Personagem {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    @Override
+    public String coletarMadeira() {
+        return "";
+    }
+
+    @Override
+    public String coletarOuro() {
+        return "";
     }
 }
