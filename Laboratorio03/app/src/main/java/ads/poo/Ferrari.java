@@ -18,10 +18,10 @@ public class Ferrari extends Veiculo implements Convesivel {
     @Override
     public boolean abrirFecharCapota() {
         if (isCapota()) {
-            System.out.println("Capota conversível fechada");
+            System.out.println("A capota da Ferrari foi fechada");
             return this.capota = false;
         } else {
-            System.out.println("Capota conversível aberta");
+            System.out.println("A capota da Ferrari foi aberta");
             return this.capota = true;
         }
     }
