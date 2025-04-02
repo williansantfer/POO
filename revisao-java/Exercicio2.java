@@ -1,32 +1,23 @@
-/*
-    p (0.9):
-
-        projeto1 (w1) (valor: 2)
-
-        projeto2 (w2) (valor: 3)
-
-    a (0,1):
-
-        participação nas aulas
-
-
-    cf:
-        conceito final
-
-
- */
-
-
 public class Exercicio2 {
 
     public static void main(String[] args) {
 
-        double projeto1 = Integer.parseInt(args[0]);
-        double projeto2 = Integer.parseInt(args[1]);
-        double participacao = Integer.parseInt(args[2]);
+        if (args.length != 3) {
+            System.out.println("Inválido. É necessário informar as notas dos dois projetos práticos e a de participação na aula.");
+        }
 
-        double cf = ((projeto1 * 2 + projeto2 * 3) * 0.9 + (participacao * 0.1));
+        double projeto1 = Double.parseDouble(args[0]);
+        double projeto2 = Double.parseDouble(args[1]);
+        double participacao = Double.parseDouble(args[2]);
 
+        double conceitoFinal = Math.round((((projeto1 * 2 + projeto2 * 3) / 5) * 0.9) + participacao * 0.1);
+
+        System.out.println("Conceito Final: " + conceitoFinal);
+
+        if (conceitoFinal >= 6) {
+            System.out.println("Situação: APROVADO");
+        } else {
+            System.out.println("Situação: REPROVADO");
+        }
     }
-
 }
