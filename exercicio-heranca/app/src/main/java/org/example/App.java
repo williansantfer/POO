@@ -3,6 +3,8 @@
  */
 package org.example;
 
+import org.example.figura.Ponto;
+
 public class App {
 
     public static void main(String[] args) {
@@ -21,6 +23,14 @@ public class App {
 
         System.out.println(cavaleiro.mover());
         System.out.println(cavaleiro.atacar());
+
+        System.out.println();
+
+        // Objetos do pacote "figura"
+
+        Ponto p = new Ponto("Preto", 2, 6);
+
+        System.out.println(p.desenhar());
 
 
     }
