@@ -7,9 +7,9 @@ classDiagram
     class Animal {
         <<Abstract>>
         
-        - nome: String
+        # nome: String
         
-        + toString() String *
+        + habilidade() String *
     }
     
     class Arara {
@@ -68,6 +68,9 @@ classDiagram
     Animal <|-- Pinguim
     Animal <|-- Ornitorrinco
     
+    Latidor <|.. Cachorro
+    Latidor <|.. Lobo
+    
     Voador <|.. Arara
     Voador <|.. Morcego
     
@@ -88,18 +91,6 @@ classDiagram
     Saltador <|.. Leao
     Saltador <|.. Lobo
     Saltador <|.. Macaco
-
-    EmissorDeSom <|.. Arara
-    EmissorDeSom <|.. Avestruz
-    EmissorDeSom <|.. Baleia
-    EmissorDeSom <|.. Cachorro
-    EmissorDeSom <|.. Gato
-    EmissorDeSom <|.. Leao
-    EmissorDeSom <|.. Lobo
-    EmissorDeSom <|.. Macaco
-    EmissorDeSom <|.. Morcego
-    EmissorDeSom <|.. Pinguim
-    EmissorDeSom <|.. Ornitorrinco
 
     Dorminhoco <|.. Arara
     Dorminhoco <|.. Avestruz
@@ -123,7 +114,6 @@ classDiagram
     class Nadador {
         <<interface>>
         
-        + mergulhar() String *
         + nadar() String *
     }
     
@@ -139,25 +129,17 @@ classDiagram
         + saltar() String *
     }
     
-    class Comedor {
-        <<interface>>
-        
-        + comer() String *
-    }
     
-    class EmissorDeSom {
+    class Latidor{
         <<interface>>
         
-        + emitirSom() String *
+        + latir() String *
     }
     
     class Dorminhoco {
         <<interface>>
         
-        + deitar() String *
-        + cochilar() String *
         + dormir() String *
-        + acordar() String *
     }
     
     
